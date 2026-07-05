@@ -9,8 +9,16 @@ const HERO_IMAGE =
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-plum-100/60 via-cream to-cream py-16 md:py-24">
-      <div className="absolute -top-10 left-1/4 -z-10 h-96 w-96 rounded-full bg-plum-200/40 blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold-200/30 blur-3xl" />
+      <motion.div
+        animate={{ x: [0, 40, -25, 0], y: [0, -30, 30, 0], scale: [1, 1.1, 0.9, 1] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-10 left-1/4 -z-10 h-96 w-96 rounded-full bg-plum-200/40 blur-3xl"
+      />
+      <motion.div
+        animate={{ x: [0, -30, 40, 0], y: [0, 40, -20, 0], scale: [1, 0.9, 1.08, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold-200/30 blur-3xl"
+      />
 
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:items-center">
         <motion.div
@@ -22,11 +30,18 @@ export default function Hero() {
           <Sparkle className="animate-float absolute -left-6 -top-6 h-10 w-10 text-gold-400" />
           <Swirl className="animate-float-slow absolute -bottom-8 -right-4 h-12 w-20 rotate-12 text-plum-400" />
 
-          <img
-            src={HERO_IMAGE}
-            alt="Guests celebrating at a Vivora-planned event"
-            className="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-2xl shadow-plum-900/20"
-          />
+          <motion.div
+            whileHover={{ scale: 1.02, rotate: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="group relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-plum-900/20"
+          >
+            <img
+              src={HERO_IMAGE}
+              alt="Guests celebrating at a Vivora-planned event"
+              className="aspect-[4/3] w-full object-cover transition-all duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-plum-950/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          </motion.div>
 
           <div className="animate-spin-slow absolute -bottom-6 -left-6 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl">
             <span className="font-display text-lg font-black leading-none">Est.</span>
