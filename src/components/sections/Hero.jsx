@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
-import { DoodleStar, DoodleLoop } from "../ui/GeneratedDoodles";
+import { DoodleStar, DoodleLoop, DoodleSwirl } from "../ui/GeneratedDoodles";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80";
@@ -9,6 +9,7 @@ const HERO_IMAGE =
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-plum-100/60 via-cream to-cream py-16 md:py-24">
+      {/* Dynamic background shapes */}
       <motion.div
         animate={{ x: [0, 40, -25, 0], y: [0, -30, 30, 0], scale: [1, 1.1, 0.9, 1] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
@@ -21,15 +22,32 @@ export default function Hero() {
       />
 
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:items-center">
+        {/* Left Side: Main image with dynamic decorative elements */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="relative md:col-span-5"
         >
-          <DoodleStar className="animate-float absolute -left-10 -top-10 h-14 w-14 text-gold-500/80 select-none pointer-events-none" />
-          <DoodleLoop className="animate-float-slow absolute -bottom-10 -right-8 h-20 w-20 text-plum-400/80 rotate-12 select-none pointer-events-none" />
+          {/* Interactive Floating Doodle Star */}
+          <motion.div
+            whileHover={{ scale: 1.25, rotate: -15 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="absolute -left-12 -top-12 z-20 cursor-pointer text-gold-500/90"
+          >
+            <DoodleStar className="animate-float h-16 w-16" />
+          </motion.div>
 
+          {/* Interactive Floating Doodle Loop */}
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 20 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="absolute -bottom-12 -right-8 z-20 cursor-pointer text-plum-400/95 rotate-12"
+          >
+            <DoodleLoop className="animate-float-slow h-20 w-20" />
+          </motion.div>
+
+          {/* Main Visual Image Container */}
           <motion.div
             whileHover={{ scale: 1.02, rotate: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -43,36 +61,54 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-plum-950/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </motion.div>
 
-          <div className="animate-spin-slow absolute -bottom-6 -left-6 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl">
+          {/* Established badge with rotate hover */}
+          <motion.div 
+            whileHover={{ scale: 1.1, rotate: 360 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="absolute -bottom-6 -left-6 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl cursor-pointer"
+          >
             <span className="font-display text-lg font-black leading-none">Est.</span>
             <span className="font-display text-lg font-black leading-none text-gold-400">
               Vivora
             </span>
-          </div>
+          </motion.div>
         </motion.div>
 
+        {/* Right Side: Text & CTA details */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           className="md:col-span-7"
         >
-          <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-600">
+          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-600 relative">
             <span className="h-px w-6 bg-gold-500" aria-hidden="true" />
             Vivora Events
+            {/* Sparkle badge near label */}
+            <DoodleStar className="h-4 w-4 text-gold-500 animate-pulse" />
           </span>
-          <h1 className="mt-5 font-display text-5xl font-black leading-[0.95] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl">
+
+          <h1 className="mt-5 font-display text-5xl font-black leading-[1.0] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl">
             Every occasion,
             <br />
-            <span className="text-plum-500">perfectly</span> orchestrated
+            <span className="text-plum-500 relative inline-block">
+              perfectly
+              {/* Hand-drawn swirl underline element */}
+              <DoodleSwirl className="absolute -bottom-4 left-0 h-5 w-full text-gold-500/80 select-none pointer-events-none" />
+            </span> orchestrated
           </h1>
-          <p className="mt-6 max-w-lg text-lg text-plum-700/80">
+
+          <p className="mt-8 max-w-lg text-lg text-plum-700/80 relative">
             From intimate ceremonies to citywide celebrations, Vivora plans, designs,
             and delivers every detail of your event — so you can just show up and
             celebrate.
+            {/* Decorative layout pointer curl */}
+            <DoodleLoop className="absolute -right-12 -bottom-6 hidden lg:block h-16 w-16 text-plum-300/60 rotate-45 select-none pointer-events-none" />
           </p>
 
-          <div className="mt-10 flex flex-col gap-6 rounded-[2rem] bg-gradient-to-r from-plum-100 to-gold-100 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-6 rounded-[2rem] bg-gradient-to-r from-plum-100 to-gold-100 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between relative overflow-hidden group">
+            {/* Inner background star glow */}
+            <DoodleStar className="absolute -right-4 -top-4 h-12 w-12 text-gold-400/20 select-none pointer-events-none transition-transform duration-500 group-hover:scale-125" />
             <div>
               <p className="font-display text-xl font-extrabold text-plum-900">
                 15+ Event Categories, One Team
