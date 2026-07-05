@@ -64,19 +64,16 @@ export default function About() {
       <section className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="Why Vivora" title="What Makes Us Different" />
-          <div className="mt-14 grid gap-px overflow-hidden border border-plum-900/15 bg-plum-900/15 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, index) => (
-              <div key={value.title} className="flex flex-col justify-between bg-cream p-6">
-                <span className="flex items-center justify-between">
-                  <span className="font-mono text-xs tracking-[0.2em] text-plum-700/40">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <value.icon size={20} className="text-plum-700" />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => (
+              <div key={value.title} className="rounded-[1.75rem] bg-white p-6 shadow-sm">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-plum-100 text-plum-700">
+                  <value.icon size={20} />
                 </span>
-                <div className="mt-10">
-                  <p className="font-display text-xl font-bold text-plum-900">{value.title}</p>
-                  <p className="mt-2 text-sm text-plum-700/70">{value.description}</p>
-                </div>
+                <p className="mt-5 font-display text-lg font-bold text-plum-900">
+                  {value.title}
+                </p>
+                <p className="mt-2 text-sm text-plum-700/70">{value.description}</p>
               </div>
             ))}
           </div>
@@ -85,13 +82,16 @@ export default function About() {
 
       <ProcessSection />
 
-      <section className="bg-plum-50 px-6 py-24">
+      <section className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="The Team Behind Vivora" title="Who You'll Work With" />
-          <div className="mt-14 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {teamCapabilities.map((capability) => (
-              <div key={capability.title} className="border-l-2 border-gold-400 pl-6">
-                <p className="font-display text-xl font-bold text-plum-900">
+              <div
+                key={capability.title}
+                className="rounded-[1.75rem] border border-plum-100 bg-white p-6"
+              >
+                <p className="font-display text-lg font-bold text-plum-900">
                   {capability.title}
                 </p>
                 <p className="mt-2 text-sm text-plum-700/70">{capability.description}</p>

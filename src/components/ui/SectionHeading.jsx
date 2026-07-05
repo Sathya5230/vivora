@@ -10,7 +10,7 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = "cent
           {eyebrow}
         </span>
       )}
-      <h2 className="font-display text-4xl font-extrabold tracking-tight text-plum-900 sm:text-5xl">
+      <h2 className="font-display text-4xl font-black tracking-tight text-plum-900 sm:text-5xl">
         {title}
       </h2>
       {subtitle && <p className="max-w-xl text-base text-plum-700/80 sm:text-lg">{subtitle}</p>}

@@ -26,10 +26,10 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="px-6 py-24">
+    <section className="bg-plum-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="How Vivora Works" title="From First Call to Final Toast" />
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
             <ProcessStep key={step.number} {...step} />
           ))}

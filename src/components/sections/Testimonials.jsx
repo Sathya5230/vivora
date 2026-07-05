@@ -24,10 +24,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-plum-50 px-6 py-24">
+    <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Client Love" title="What Our Clients Say" />
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.name} {...testimonial} />
           ))}

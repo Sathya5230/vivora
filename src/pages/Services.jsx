@@ -21,7 +21,7 @@ export default function Services() {
           subtitle="Browse all 15 categories and 100+ event types Vivora manages end to end. Search to find exactly what you need."
         />
 
-        <div className="mx-auto mt-8 flex max-w-md items-center gap-3 border-b-2 border-plum-900 px-1 py-3">
+        <div className="mx-auto mt-8 flex max-w-md items-center gap-3 rounded-full border border-plum-200 bg-white px-5 py-3">
           <Search size={18} className="text-plum-700/50" />
           <input
             type="text"
@@ -34,7 +34,7 @@ export default function Services() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-24">
-        <div className="border-t border-plum-900/15">
+        <div className="flex flex-col gap-4">
           {categories.map((category, index) => (
             <AccordionCategory
               key={category.id}

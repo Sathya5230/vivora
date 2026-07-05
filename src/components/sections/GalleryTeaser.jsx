@@ -25,14 +25,14 @@ const photos = [
 
 export default function GalleryTeaser() {
   return (
-    <section className="border-y border-plum-900/10 px-6 py-24">
+    <section className="bg-plum-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Moments We've Made" title="A Glimpse Into Our Work" />
         <div className="mt-14 columns-2 gap-4 lg:columns-4">
           {photos.map((photo) => (
             <div
               key={photo.caption}
-              className="group relative mb-4 overflow-hidden break-inside-avoid"
+              className="group relative mb-4 overflow-hidden rounded-[1.75rem] break-inside-avoid"
               style={{ aspectRatio: photo.ratio }}
             >
               <img

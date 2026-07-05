@@ -8,16 +8,9 @@ const HERO_IMAGE =
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream py-16 md:py-24">
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(30,11,28,0.12) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-        aria-hidden="true"
-      />
+    <section className="relative overflow-hidden bg-gradient-to-b from-plum-100/60 via-cream to-cream py-16 md:py-24">
+      <div className="absolute -top-10 left-1/4 -z-10 h-96 w-96 rounded-full bg-plum-200/40 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold-200/30 blur-3xl" />
 
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:items-center">
         <motion.div
@@ -26,18 +19,19 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="relative md:col-span-5"
         >
-          <Sparkle className="absolute -left-5 -top-5 h-9 w-9 text-gold-400" />
-          <Swirl className="absolute -bottom-7 -right-4 h-11 w-20 rotate-12 text-plum-400" />
+          <Sparkle className="absolute -left-6 -top-6 h-10 w-10 text-gold-400" />
+          <Swirl className="absolute -bottom-8 -right-4 h-12 w-20 rotate-12 text-plum-400" />
 
           <img
             src={HERO_IMAGE}
             alt="Guests celebrating at a Vivora-planned event"
-            className="aspect-[4/3] w-full border-2 border-plum-900 object-cover"
+            className="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-2xl shadow-plum-900/20"
           />
 
-          <div className="absolute -bottom-6 left-6 flex -rotate-3 items-center gap-2 border-2 border-dashed border-plum-900 bg-cream px-4 py-2 shadow-[4px_4px_0_0_rgba(30,11,28,1)]">
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-plum-900">
-              No. 001 · Est. Vivora
+          <div className="absolute -bottom-6 -left-6 flex h-24 w-24 -rotate-6 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl">
+            <span className="font-display text-lg font-black leading-none">Est.</span>
+            <span className="font-display text-lg font-black leading-none text-gold-400">
+              Vivora
             </span>
           </div>
         </motion.div>
@@ -52,7 +46,7 @@ export default function Hero() {
             <span className="h-px w-6 bg-gold-500" aria-hidden="true" />
             Vivora Events
           </span>
-          <h1 className="mt-5 font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-display text-5xl font-black leading-[0.95] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl">
             Every occasion,
             <br />
             <span className="text-plum-500">perfectly</span> orchestrated
@@ -63,9 +57,9 @@ export default function Hero() {
             celebrate.
           </p>
 
-          <div className="mt-10 flex flex-col gap-6 border-t-2 border-plum-900 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-6 rounded-[2rem] bg-gradient-to-r from-plum-100 to-gold-100 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-xl font-bold text-plum-900">
+              <p className="font-display text-xl font-extrabold text-plum-900">
                 15+ Event Categories, One Team
               </p>
               <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-plum-700/60">

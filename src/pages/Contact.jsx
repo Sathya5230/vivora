@@ -41,7 +41,7 @@ export default function Contact() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">
         {/* TODO: Email, phone, and office hours below are placeholders to replace before launch */}
-        <div className="space-y-6 bg-plum-900 p-8 text-cream">
+        <div className="space-y-6 rounded-[2rem] bg-plum-900 p-8 text-cream">
           <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
             <span className="h-px w-6 bg-gold-400/70" aria-hidden="true" />
             Get in Touch
@@ -73,7 +73,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5 border border-plum-900/15 p-8">
+        <form onSubmit={handleSubmit} className="space-y-5 rounded-[2rem] border border-plum-100 p-8">
           {submitted ? (
             <div className="flex flex-col items-center gap-3 py-12 text-center">
               <CheckCircle2 size={40} className="text-plum-700" />
@@ -90,7 +90,7 @@ export default function Contact() {
                   type="text"
                   value={form.name}
                   onChange={handleChange("name")}
-                  className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                  className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                 />
               </div>
 
@@ -102,7 +102,7 @@ export default function Contact() {
                     type="email"
                     value={form.email}
                     onChange={handleChange("email")}
-                    className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                    className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                   />
                 </div>
                 <div>
@@ -111,7 +111,7 @@ export default function Contact() {
                     type="tel"
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                    className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                   />
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                   <select
                     value={form.eventType}
                     onChange={handleChange("eventType")}
-                    className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                    className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                   >
                     {categories.map((category) => (
                       <option key={category.id} value={category.name}>
@@ -137,7 +137,7 @@ export default function Contact() {
                     type="date"
                     value={form.eventDate}
                     onChange={handleChange("eventDate")}
-                    className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                    className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                   />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function Contact() {
                   rows={4}
                   value={form.message}
                   onChange={handleChange("message")}
-                  className="mt-1 w-full border-b-2 border-plum-900/15 bg-transparent px-1 py-3 outline-none focus:border-plum-900"
+                  className="mt-1 w-full rounded-xl border border-plum-200 px-4 py-3 outline-none focus:border-plum-500"
                 />
               </div>
 
