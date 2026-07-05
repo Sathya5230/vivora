@@ -19,7 +19,7 @@ export default function AccordionCategory({ category, defaultOpen = false, searc
     <div className="rounded-2xl border border-plum-100 bg-white">
       <button
         type="button"
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={() => setOpen(!isOpen)}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
         <span className="flex items-center gap-3">
