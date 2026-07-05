@@ -5,11 +5,9 @@ import Button from "../ui/Button";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/services", label: "Exhibitors" },
-  { to: "/services#sponsors", label: "Sponsors" },
-  { to: "/about#blogs", label: "Blogs" },
-  { to: "/contact", label: "Contact Us" },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const TechLogo = () => (
@@ -34,7 +32,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2 font-display text-2xl font-bold tracking-tight text-slate-900">
           <TechLogo />
-          <span>TechXperience</span>
+          <span>Vivora</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -59,7 +57,7 @@ export default function Header() {
             to="/contact"
             className="inline-flex items-center justify-center rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-200"
           >
-            GET A TICKET
+            Book a Consultation
           </Link>
         </div>
 
@@ -93,7 +91,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center rounded-full bg-purple-600 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-purple-700"
           >
-            GET A TICKET
+            Book a Consultation
           </Link>
         </div>
       )}

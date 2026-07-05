@@ -25,10 +25,10 @@ export default function Footer() {
         <div>
           <p className="font-display text-2xl font-bold text-white flex items-center gap-2">
             <TechLogo />
-            <span>TechXperience</span>
+            <span>Vivora</span>
           </p>
           <p className="mt-3 text-sm text-cream/70">
-            Fueling innovation, sparking connection — the premier gathering of global creators and builders.
+            Full-spectrum event management — from intimate ceremonies to citywide celebrations.
           </p>
           <div className="mt-5 flex gap-4 text-cream/70">
             <a href="#" aria-label="Instagram" className="hover:text-purple-400">
@@ -53,37 +53,32 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/about" className="hover:text-cream">
-                About Us
+                About
               </Link>
             </li>
             <li>
               <Link to="/services" className="hover:text-cream">
-                Exhibitors
+                Services
               </Link>
             </li>
             <li>
               <Link to="/contact" className="hover:text-cream">
-                Contact Us
+                Contact
               </Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="mb-4 font-semibold text-purple-400">Categories</p>
+          <p className="mb-4 font-semibold text-purple-400">Popular Categories</p>
           <ul className="space-y-2 text-sm text-cream/70">
-            <li>
-              <a href="#" className="hover:text-cream">Keynotes</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cream">Exhibits</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cream">Workshops</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cream">Networking</a>
-            </li>
+            {quickCategories.map((category) => (
+              <li key={category.id}>
+                <Link to="/services" className="hover:text-cream">
+                  {category.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -91,17 +86,17 @@ export default function Footer() {
           <p className="mb-4 font-semibold text-purple-400">Get in Touch</p>
           <ul className="space-y-3 text-sm text-cream/70">
             <li className="flex items-center gap-2">
-              <Mail size={16} /> info@techxperience.com
+              <Mail size={16} /> hello@vivora.events
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={16} /> +1 (555) 010-0200
+              <Phone size={16} /> +1 (555) 010-0100
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-cream/10 py-6 text-center text-xs text-cream/50">
-        © {new Date().getFullYear()} TechXperience. All rights reserved.
+        © {new Date().getFullYear()} Vivora Events. All rights reserved.
       </div>
     </footer>
   );

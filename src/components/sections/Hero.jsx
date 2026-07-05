@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkle, Swirl } from "../ui/Doodles";
-import { Calendar, MapPin } from "lucide-react";
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80";
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80";
 
 const partners = [
   // Logo 1
@@ -70,7 +69,7 @@ export default function Hero() {
             
             <img
               src={HERO_IMAGE}
-              alt="TechXperience 2025 event hall"
+              alt="Guests celebrating at a Vivora-planned event"
               className="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-2xl ring-4 ring-purple-100/50"
             />
           </motion.div>
@@ -82,38 +81,33 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
             className="md:col-span-7 flex flex-col justify-center"
           >
-            <span className="text-sm font-bold uppercase tracking-widest text-purple-600">
-              TechXperience 2025
+            <span className="text-sm font-bold uppercase tracking-widest text-gold-500">
+              Vivora Events
             </span>
             <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.1] text-slate-900 sm:text-5xl lg:text-[3.5rem] tracking-tight">
-              Fuel <span className="text-purple-600">Innovation</span>,<br />Spark Connection
+              Every Occasion, <span className="text-purple-600">Perfectly</span> Orchestrated
             </h1>
             <p className="mt-6 max-w-xl text-lg text-slate-600/90 leading-relaxed">
-              Discover breakthrough ideas, connect with experts, and unlock the future of technology.
+              From intimate ceremonies to citywide celebrations, Vivora plans, designs,
+              and delivers every detail of your event — so you can just show up and
+              celebrate.
             </p>
 
             {/* Ticket Banner Box */}
             <div className="mt-10 flex flex-col gap-6 rounded-[2rem] bg-gradient-to-r from-purple-100/80 to-purple-50/40 p-6 shadow-sm border border-purple-100/30 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="font-display text-lg font-bold text-slate-900 sm:text-xl">
-                  Unleashing the Power of Change
+                  15+ Event Categories, One Team
                 </p>
-                <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-medium text-slate-600 sm:text-sm">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={16} className="text-purple-500" />
-                    April 24, 2025
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MapPin size={16} className="text-purple-500" />
-                    Ballroom Extra Hotel
-                  </span>
-                </div>
+                <p className="mt-2.5 text-xs font-semibold text-slate-600 sm:text-sm">
+                  Weddings · Corporate · Celebrations · Culture · and more
+                </p>
               </div>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-slate-800 hover:shadow-lg whitespace-nowrap"
               >
-                GET A TICKET
+                Book a Consultation
               </Link>
             </div>
           </motion.div>
