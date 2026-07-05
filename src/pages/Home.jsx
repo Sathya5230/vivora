@@ -4,6 +4,7 @@ import StatsStrip from "../components/sections/StatsStrip";
 import ServicesBentoGrid from "../components/sections/ServicesBentoGrid";
 import ProcessSection from "../components/sections/ProcessSection";
 import Testimonials from "../components/sections/Testimonials";
+import GalleryTeaser from "../components/sections/GalleryTeaser";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ServicesBentoGrid />
       <ProcessSection />
       <Testimonials />
+      <GalleryTeaser />
     </>
   );
 }
