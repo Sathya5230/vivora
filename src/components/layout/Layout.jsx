@@ -5,6 +5,7 @@ import Footer from "./Footer";
 export default function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-cream text-plum-900">
+      <div className="noise-overlay" aria-hidden="true" />
       <Header />
       <main className="flex-1">
         <Outlet />

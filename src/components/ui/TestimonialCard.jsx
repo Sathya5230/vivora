@@ -1,6 +1,6 @@
 export default function TestimonialCard({ quote, name, eventType }) {
   return (
-    <div className="rounded-[1.75rem] bg-white p-8 shadow-sm">
+    <div className="flex h-full flex-col rounded-[1.75rem] bg-white p-8 shadow-sm">
       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-100 font-display text-2xl font-black leading-none text-gold-500">
         "
       </span>

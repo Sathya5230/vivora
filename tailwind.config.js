@@ -41,9 +41,17 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-14px) rotate(8deg)" },
+        },
       },
       animation: {
         marquee: "marquee 30s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        "float-slow": "float 9s ease-in-out infinite",
+        "float-slower": "float 12s ease-in-out infinite",
+        "spin-slow": "spin 12s linear infinite",
       },
     },
   },

@@ -1,4 +1,7 @@
 import SectionHeading from "../ui/SectionHeading";
+import TiltImage from "../ui/TiltImage";
+import Reveal from "../ui/Reveal";
+import { Swirl } from "../ui/Doodles";
 
 const photos = [
   {
@@ -25,27 +28,15 @@ const photos = [
 
 export default function GalleryTeaser() {
   return (
-    <section className="bg-plum-50 px-6 py-24">
+    <section className="relative overflow-hidden bg-plum-50 px-6 py-24">
+      <Swirl className="animate-float-slower absolute bottom-8 right-8 hidden h-10 w-16 text-plum-400/50 sm:block" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Moments We've Made" title="A Glimpse Into Our Work" />
         <div className="mt-14 columns-2 gap-4 lg:columns-4">
-          {photos.map((photo) => (
-            <div
-              key={photo.caption}
-              className="group relative mb-4 overflow-hidden rounded-[1.75rem] break-inside-avoid"
-              style={{ aspectRatio: photo.ratio }}
-            >
-              <img
-                src={photo.src}
-                alt={photo.caption}
-                className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum-900/70 via-transparent to-transparent p-4 opacity-0 transition group-hover:opacity-100">
-                <span className="font-mono text-xs uppercase tracking-[0.15em] text-cream">
-                  {photo.caption}
-                </span>
-              </div>
-            </div>
+          {photos.map((photo, index) => (
+            <Reveal key={photo.caption} delay={index * 0.08} className="break-inside-avoid">
+              <TiltImage src={photo.src} caption={photo.caption} ratio={photo.ratio} />
+            </Reveal>
           ))}
         </div>
       </div>

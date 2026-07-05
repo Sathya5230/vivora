@@ -1,3 +1,5 @@
+import CountUp from "./CountUp";
+
 export default function StatCard({ value, label, icon: Icon }) {
   return (
     <div className="flex flex-col items-center gap-4 rounded-[2rem] bg-plum-800 px-6 py-10 text-center">
@@ -6,7 +8,7 @@ export default function StatCard({ value, label, icon: Icon }) {
       </span>
       <div>
         <p className="font-display text-4xl font-black tracking-tight text-gold-400 sm:text-5xl">
-          {value}
+          <CountUp value={value} />
         </p>
         <p className="mt-1 font-mono text-xs uppercase tracking-[0.2em] text-cream/60">{label}</p>
       </div>

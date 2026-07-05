@@ -1,5 +1,7 @@
 import TestimonialCard from "../ui/TestimonialCard";
 import SectionHeading from "../ui/SectionHeading";
+import Reveal from "../ui/Reveal";
+import { Sparkle } from "../ui/Doodles";
 
 // Placeholder testimonials — replace with real client quotes before launch.
 const testimonials = [
@@ -24,12 +26,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="px-6 py-24">
+    <section className="relative overflow-hidden px-6 py-24">
+      <Sparkle className="animate-float absolute left-8 top-4 h-8 w-8 text-gold-400/60" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Client Love" title="What Our Clients Say" />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.name} {...testimonial} />
+          {testimonials.map((testimonial, index) => (
+            <Reveal key={testimonial.name} delay={index * 0.12}>
+              <TestimonialCard {...testimonial} />
+            </Reveal>
           ))}
         </div>
       </div>

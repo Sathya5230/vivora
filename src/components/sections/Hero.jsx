@@ -19,8 +19,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="relative md:col-span-5"
         >
-          <Sparkle className="absolute -left-6 -top-6 h-10 w-10 text-gold-400" />
-          <Swirl className="absolute -bottom-8 -right-4 h-12 w-20 rotate-12 text-plum-400" />
+          <Sparkle className="animate-float absolute -left-6 -top-6 h-10 w-10 text-gold-400" />
+          <Swirl className="animate-float-slow absolute -bottom-8 -right-4 h-12 w-20 rotate-12 text-plum-400" />
 
           <img
             src={HERO_IMAGE}
@@ -28,7 +28,7 @@ export default function Hero() {
             className="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-2xl shadow-plum-900/20"
           />
 
-          <div className="absolute -bottom-6 -left-6 flex h-24 w-24 -rotate-6 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl">
+          <div className="animate-spin-slow absolute -bottom-6 -left-6 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-plum-900 text-center text-cream shadow-xl">
             <span className="font-display text-lg font-black leading-none">Est.</span>
             <span className="font-display text-lg font-black leading-none text-gold-400">
               Vivora

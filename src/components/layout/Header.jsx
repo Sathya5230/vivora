@@ -36,12 +36,22 @@ export default function Header() {
               to={link.to}
               end={link.to === "/"}
               className={({ isActive }) =>
-                `font-mono text-xs uppercase tracking-[0.15em] transition-colors ${
+                `group relative font-mono text-xs uppercase tracking-[0.15em] transition-colors ${
                   isActive ? "text-plum-900" : "text-plum-700/60 hover:text-plum-900"
                 }`
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-gold-500 transition-transform duration-300 ${
+                      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                    aria-hidden="true"
+                  />
+                </>
+              )}
             </NavLink>
           ))}
         </nav>

@@ -10,8 +10,8 @@ export default function CtaBanner({
 }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-plum-700 to-plum-900 px-6 py-20 text-center text-cream">
-      <Sparkle className="absolute left-10 top-10 h-10 w-10 text-gold-400/70" />
-      <Sparkle className="absolute bottom-10 right-10 h-8 w-8 text-gold-400/50" />
+      <Sparkle className="animate-float absolute left-10 top-10 h-10 w-10 text-gold-400/70" />
+      <Sparkle className="animate-float-slow absolute bottom-10 right-10 h-8 w-8 text-gold-400/50" />
       <span className="flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
         <span className="h-px w-6 bg-gold-400/70" aria-hidden="true" />
         Get in Touch

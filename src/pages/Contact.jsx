@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, CheckCircle2, Instagram, Facebook, Twitter } from "lucide-react";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
+import Reveal from "../components/ui/Reveal";
+import { Sparkle } from "../components/ui/Doodles";
 import { categories } from "../data/categories";
 
 const initialForm = {
@@ -32,7 +34,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="relative mx-auto max-w-6xl overflow-hidden px-6 py-16">
+      <Sparkle className="animate-float absolute right-6 top-2 h-8 w-8 text-gold-400/60" />
       <SectionHeading
         eyebrow="Let's Talk"
         title="Start Planning Your Event"
@@ -41,7 +44,7 @@ export default function Contact() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">
         {/* TODO: Email, phone, and office hours below are placeholders to replace before launch */}
-        <div className="space-y-6 rounded-[2rem] bg-plum-900 p-8 text-cream">
+        <Reveal className="space-y-6 rounded-[2rem] bg-plum-900 p-8 text-cream">
           <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
             <span className="h-px w-6 bg-gold-400/70" aria-hidden="true" />
             Get in Touch
@@ -71,8 +74,9 @@ export default function Contact() {
               <Twitter size={20} />
             </a>
           </div>
-        </div>
+        </Reveal>
 
+        <Reveal delay={0.1}>
         <form onSubmit={handleSubmit} className="space-y-5 rounded-[2rem] border border-plum-100 p-8">
           {submitted ? (
             <div className="flex flex-col items-center gap-3 py-12 text-center">
@@ -158,6 +162,7 @@ export default function Contact() {
             </>
           )}
         </form>
+        </Reveal>
       </div>
     </section>
   );
