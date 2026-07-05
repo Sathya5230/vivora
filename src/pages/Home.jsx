@@ -3,6 +3,7 @@ import CategoryMarquee from "../components/sections/CategoryMarquee";
 import StatsStrip from "../components/sections/StatsStrip";
 import ServicesBentoGrid from "../components/sections/ServicesBentoGrid";
 import ProcessSection from "../components/sections/ProcessSection";
+import Testimonials from "../components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <StatsStrip />
       <ServicesBentoGrid />
       <ProcessSection />
+      <Testimonials />
     </>
   );
 }
