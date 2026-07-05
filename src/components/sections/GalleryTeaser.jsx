@@ -1,7 +1,6 @@
 import SectionHeading from "../ui/SectionHeading";
 import TiltImage from "../ui/TiltImage";
 import Reveal from "../ui/Reveal";
-import { Swirl } from "../ui/Doodles";
 
 const photos = [
   {
@@ -29,7 +28,12 @@ const photos = [
 export default function GalleryTeaser() {
   return (
     <section className="relative overflow-hidden bg-plum-50 px-6 py-24">
-      <Swirl className="animate-float-slower absolute bottom-8 right-8 hidden h-10 w-16 text-plum-400/50 sm:block" />
+      <img
+        src="/doodle_loop.png"
+        alt=""
+        className="animate-float-slower absolute bottom-8 right-8 hidden h-16 w-16 select-none pointer-events-none rotate-90 opacity-45 sm:block"
+        aria-hidden="true"
+      />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Moments We've Made" title="A Glimpse Into Our Work" />
         <div className="mt-14 columns-2 gap-4 lg:columns-4">

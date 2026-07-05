@@ -3,7 +3,6 @@ import { Mail, Phone, MapPin, CheckCircle2, Instagram, Facebook, Twitter } from 
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Reveal from "../components/ui/Reveal";
-import { Sparkle, Swirl } from "../components/ui/Doodles";
 import { categories } from "../data/categories";
 
 const initialForm = {
@@ -35,8 +34,12 @@ export default function Contact() {
 
   return (
     <section className="relative mx-auto max-w-6xl overflow-hidden px-6 py-16">
-      <Sparkle className="animate-float absolute right-6 top-2 h-8 w-8 text-gold-400/60" />
-      <Swirl className="animate-float-slow absolute left-6 top-10 h-10 w-16 -rotate-12 text-plum-300/60" />
+        <img
+          src="/doodle_star.png"
+          alt=""
+          className="animate-float absolute right-6 top-2 h-12 w-12 select-none pointer-events-none opacity-60"
+          aria-hidden="true"
+        />
       <SectionHeading
         eyebrow="Let's Talk"
         title="Start Planning Your Event"

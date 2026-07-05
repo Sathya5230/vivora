@@ -92,6 +92,19 @@ const configMatrix = {
   }
 };
 
+const previewImages = {
+  elegant: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=500&q=80",
+  tech: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=500&q=80",
+  festival: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80",
+  cozy: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500&q=80"
+};
+
+const sizePreviewImages = {
+  small: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=500&q=80",
+  medium: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=500&q=80",
+  large: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80"
+};
+
 export default function VibeConfigurator() {
   const [step, setStep] = useState(1);
   const [selectedVibe, setSelectedVibe] = useState(vibes[0].id);
@@ -109,36 +122,56 @@ export default function VibeConfigurator() {
   const config = configMatrix[key];
 
   return (
-    <section className="relative overflow-hidden bg-plum-950 text-cream py-24 md:py-32">
+    <section className="relative overflow-hidden bg-slate-950 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-950/70 via-slate-950 to-black text-cream py-24 md:py-32">
       {/* Background glowing lines and blobs */}
       <div className="absolute top-0 right-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-purple-500/10 blur-3xl" />
       <div className="absolute bottom-0 left-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-gold-500/5 blur-3xl" />
       
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         
+        {/* Floating Custom Hand-Drawn Doodle Assets */}
+        <img
+          src="/doodle_star.png"
+          alt=""
+          className="animate-float absolute -left-10 -top-12 h-16 w-16 select-none pointer-events-none opacity-40"
+          aria-hidden="true"
+        />
+        <img
+          src="/doodle_loop.png"
+          alt=""
+          className="animate-float-slow absolute -right-10 -bottom-10 h-20 w-20 select-none pointer-events-none rotate-45 opacity-40"
+          aria-hidden="true"
+        />
+        <img
+          src="/doodle_swirl.png"
+          alt=""
+          className="animate-float absolute right-10 -top-8 h-16 w-16 select-none pointer-events-none opacity-30"
+          aria-hidden="true"
+        />
+
         {/* Header content */}
         <div className="text-center mb-16">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
-            Interactive Widget
+            Interactive Configurator
           </span>
           <h2 className="mt-4 font-display text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl uppercase">
             Design Your <span className="text-gradient">Event Vibe</span>
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-sm text-cream/70">
+          <p className="mt-4 max-w-xl mx-auto text-sm text-cream/70 leading-relaxed">
             Select your aesthetic preferences and event size to instantly visualize your bespoke planning guidelines.
           </p>
         </div>
 
-        {/* Outer step container */}
-        <div className="glass-card-dark rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-white/5 relative overflow-hidden">
+        {/* Outer step container with premium frosted glassmorphism styling */}
+        <div className="bg-white/[0.03] backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/[0.08] relative overflow-hidden">
           
           {/* Top Progress Track */}
-          <div className="flex items-center justify-between mb-10 text-xs font-mono uppercase tracking-wider text-cream/40 border-b border-white/5 pb-6">
-            <span className={step >= 1 ? "text-purple-400 font-bold" : ""}>01. Choose Vibe</span>
-            <span className="h-px w-10 bg-white/10" />
-            <span className={step >= 2 ? "text-purple-400 font-bold" : ""}>02. Set Scale</span>
-            <span className="h-px w-10 bg-white/10" />
-            <span className={step === 3 ? "text-purple-400 font-bold" : ""}>03. Visualizer</span>
+          <div className="flex items-center justify-between mb-12 text-xs font-mono uppercase tracking-wider border-b border-white/5 pb-6">
+            <span className={step >= 1 ? "text-purple-400 font-extrabold tracking-widest" : "text-cream/30"}>01. Choose Vibe</span>
+            <span className={`h-px flex-grow mx-4 transition-colors ${step >= 2 ? 'bg-purple-500/40' : 'bg-white/5'}`} />
+            <span className={step >= 2 ? "text-purple-400 font-extrabold tracking-widest" : "text-cream/30"}>02. Set Scale</span>
+            <span className={`h-px flex-grow mx-4 transition-colors ${step === 3 ? 'bg-purple-500/40' : 'bg-white/5'}`} />
+            <span className={step === 3 ? "text-purple-400 font-extrabold tracking-widest" : "text-cream/30"}>03. Visualizer</span>
           </div>
 
           <AnimatePresence mode="wait">
@@ -151,27 +184,37 @@ export default function VibeConfigurator() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid gap-6 md:grid-cols-2"
+                className="grid gap-10 md:grid-cols-2 items-center"
               >
-                <div className="flex flex-col justify-center">
-                  <h3 className="font-display text-2xl font-black text-white">
-                    What is the energy of your event?
-                  </h3>
-                  <p className="mt-3 text-sm text-cream/70 leading-relaxed max-w-sm">
-                    Select a style layout. Our design system scales custom elements to represent these core vibe profiles.
-                  </p>
-                  
-                  {/* Current Selection details */}
-                  <div className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-sm hidden md:block">
-                    <span className="text-3xl mb-3 block">
-                      {vibes.find(v => v.id === selectedVibe)?.emoji}
-                    </span>
-                    <h4 className="font-display text-lg font-bold text-gold-400">
-                      {vibes.find(v => v.id === selectedVibe)?.name}
-                    </h4>
-                    <p className="mt-2 text-xs text-cream/60 leading-normal">
-                      {vibes.find(v => v.id === selectedVibe)?.desc}
+                <div className="flex flex-col justify-center gap-6">
+                  <div>
+                    <h3 className="font-display text-2xl font-black text-white sm:text-3xl leading-tight">
+                      What is the energy of your event?
+                    </h3>
+                    <p className="mt-3 text-sm text-cream/70 leading-relaxed">
+                      Select a style layout. Our design system scales custom elements to represent these core vibe profiles.
                     </p>
+                  </div>
+                  
+                  {/* Current Selection details upgraded with a beautiful LIVE BACKGROUND PHOTO preview */}
+                  <div className="relative overflow-hidden rounded-[2rem] h-64 w-full shadow-2xl border border-white/10 flex flex-col justify-end p-6 group max-w-sm hidden md:flex">
+                    <img
+                      src={previewImages[selectedVibe]}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    <div className="relative z-10">
+                      <span className="text-3xl mb-1.5 block">
+                        {vibes.find(v => v.id === selectedVibe)?.emoji}
+                      </span>
+                      <h4 className="font-display text-lg font-bold text-white tracking-tight">
+                        {vibes.find(v => v.id === selectedVibe)?.name}
+                      </h4>
+                      <p className="mt-1.5 text-xs text-cream/70 leading-normal font-sans line-clamp-2">
+                        {vibes.find(v => v.id === selectedVibe)?.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -184,13 +227,13 @@ export default function VibeConfigurator() {
                         onClick={() => setSelectedVibe(v.id)}
                         className={`p-5 rounded-2xl cursor-pointer border transition-all duration-300 flex items-start gap-4 ${
                           isSel 
-                            ? "bg-purple-600/35 border-purple-500 shadow-xl shadow-purple-600/10 scale-[1.02]" 
-                            : "bg-white/5 border-white/5 hover:bg-white/10"
+                            ? "bg-purple-600/15 border-purple-500/80 shadow-[0_0_30px_rgba(148,58,125,0.15)] scale-[1.02] text-white" 
+                            : "bg-white/[0.02] border-white/5 hover:bg-white/[0.05] hover:border-white/10"
                         }`}
                       >
                         <span className="text-2xl mt-0.5">{v.emoji}</span>
                         <div>
-                          <h4 className="font-display font-bold text-white text-base">{v.name}</h4>
+                          <h4 className={`font-display font-bold text-base transition-colors ${isSel ? "text-purple-300" : "text-white"}`}>{v.name}</h4>
                           <p className="mt-1 text-xs text-cream/70 leading-relaxed">{v.desc}</p>
                         </div>
                       </div>
@@ -208,15 +251,36 @@ export default function VibeConfigurator() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid gap-8 md:grid-cols-2"
+                className="grid gap-10 md:grid-cols-2 items-center"
               >
-                <div className="flex flex-col justify-center">
-                  <h3 className="font-display text-2xl font-black text-white">
-                    What is the scale of the gathering?
-                  </h3>
-                  <p className="mt-3 text-sm text-cream/70 leading-relaxed max-w-sm">
-                    Guest numbers change lighting, structural power, security configurations, and layout styles.
-                  </p>
+                <div className="flex flex-col justify-center gap-6">
+                  <div>
+                    <h3 className="font-display text-2xl font-black text-white sm:text-3xl leading-tight">
+                      What is the scale of the gathering?
+                    </h3>
+                    <p className="mt-3 text-sm text-cream/70 leading-relaxed">
+                      Guest numbers change lighting, structural power, security configurations, and layout styles.
+                    </p>
+                  </div>
+
+                  {/* Size Preview Image Cover */}
+                  <div className="relative overflow-hidden rounded-[2rem] h-64 w-full shadow-2xl border border-white/10 flex flex-col justify-end p-6 group max-w-sm hidden md:flex">
+                    <img
+                      src={sizePreviewImages[selectedSize]}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    <div className="relative z-10">
+                      <span className="text-3xl mb-1.5 block">👥</span>
+                      <h4 className="font-display text-lg font-bold text-white tracking-tight">
+                        {sizes.find(s => s.id === selectedSize)?.name}
+                      </h4>
+                      <p className="mt-1.5 text-xs text-cream/70 leading-normal font-sans line-clamp-2">
+                        {sizes.find(s => s.id === selectedSize)?.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-4 justify-center">
@@ -228,12 +292,12 @@ export default function VibeConfigurator() {
                         onClick={() => setSelectedSize(s.id)}
                         className={`p-6 rounded-2xl cursor-pointer border transition-all duration-300 flex flex-col justify-between ${
                           isSel 
-                            ? "bg-purple-600/35 border-purple-500 shadow-xl shadow-purple-600/10 scale-[1.02]" 
-                            : "bg-white/5 border-white/5 hover:bg-white/10"
+                            ? "bg-purple-600/15 border-purple-500/80 shadow-[0_0_30px_rgba(148,58,125,0.15)] scale-[1.02] text-white" 
+                            : "bg-white/[0.02] border-white/5 hover:bg-white/[0.05] hover:border-white/10"
                         }`}
                       >
-                        <h4 className="font-display font-bold text-white text-lg">{s.name}</h4>
-                        <p className="mt-2 text-xs text-cream/70">{s.desc}</p>
+                        <h4 className={`font-display font-bold text-lg transition-colors ${isSel ? "text-purple-300" : "text-white"}`}>{s.name}</h4>
+                        <p className="mt-2 text-xs text-cream/70 leading-relaxed">{s.desc}</p>
                       </div>
                     );
                   })}
@@ -252,21 +316,21 @@ export default function VibeConfigurator() {
                 className="grid gap-10 md:grid-cols-12 items-center"
               >
                 {/* Visualizer Image Pane */}
-                <div className="md:col-span-5 relative group overflow-hidden rounded-3xl border border-white/15">
+                <div className="md:col-span-5 relative group overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl">
                   <img
                     src={config.img}
                     alt={config.name}
                     className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-4 left-4 z-10">
+                  <div className="absolute bottom-4 left-4 z-10 text-left">
                     <span className="text-xs font-mono tracking-widest text-gold-400 font-bold uppercase block">Recommended Vibe</span>
                     <span className="font-display text-lg font-black text-white">{config.name}</span>
                   </div>
                 </div>
 
                 {/* Vibe Checklist Details */}
-                <div className="md:col-span-7 flex flex-col gap-6">
+                <div className="md:col-span-7 flex flex-col gap-6 text-left">
                   <div>
                     <span className="font-mono text-xs tracking-wider text-purple-400 font-bold uppercase">Simulation Complete</span>
                     <h3 className="font-display text-3xl font-black text-white mt-1">
@@ -281,7 +345,7 @@ export default function VibeConfigurator() {
                   <div className="flex flex-col gap-3">
                     <span className="text-xs font-mono uppercase text-cream/40 tracking-wider">Critical Coordination Milestones</span>
                     {config.checklist.map((item, index) => (
-                      <div key={index} className="flex items-center gap-3 bg-white/5 p-3.5 rounded-xl border border-white/5">
+                      <div key={index} className="flex items-center gap-3 bg-white/[0.03] p-3.5 rounded-xl border border-white/5 hover:bg-white/[0.06] transition-colors">
                         <CheckCircle2 size={16} className="text-purple-400 flex-shrink-0" />
                         <span className="text-xs font-semibold text-white/95 leading-none">{item}</span>
                       </div>
@@ -292,16 +356,16 @@ export default function VibeConfigurator() {
                   <div className="flex flex-wrap gap-4 mt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-600/20"
+                      className="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3.5 text-sm font-semibold text-white transition-all hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-600/20 scale-100 hover:scale-[1.02]"
                     >
                       Inquire About This Vibe
                       <ArrowRight size={14} className="ml-2" />
                     </Link>
                     <button
                       onClick={handleReset}
-                      className="inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 px-5 py-3 text-sm font-semibold text-cream hover:bg-white/10 transition-colors"
+                      className="inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 px-5 py-3.5 text-sm font-semibold text-cream hover:bg-white/10 transition-colors"
                     >
-                      <RefreshCw size={14} className="mr-2" />
+                      <RefreshCw size={14} className="mr-2 animate-spin-hover" />
                       Configure Another Event
                     </button>
                   </div>
@@ -329,7 +393,7 @@ export default function VibeConfigurator() {
 
               <button
                 onClick={handleNext}
-                className="inline-flex items-center font-mono text-xs uppercase tracking-widest gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-5 py-3 rounded-xl shadow-lg shadow-purple-600/10 hover:shadow-purple-600/20 transition-all scale-100 hover:scale-[1.03]"
+                className="inline-flex items-center font-mono text-xs uppercase tracking-widest gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-purple-600/15 hover:shadow-purple-600/25 transition-all scale-100 hover:scale-[1.03]"
               >
                 Next
                 <ArrowRight size={14} />

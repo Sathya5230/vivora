@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Sparkle, Swirl } from "../ui/Doodles";
 import Button from "../ui/Button";
 
 const HERO_IMAGE =
@@ -27,8 +26,18 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="relative md:col-span-5"
         >
-          <Sparkle className="animate-float absolute -left-6 -top-6 h-10 w-10 text-gold-400" />
-          <Swirl className="animate-float-slow absolute -bottom-8 -right-4 h-12 w-20 rotate-12 text-plum-400" />
+          <img
+            src="/doodle_star.png"
+            alt=""
+            className="animate-float absolute -left-12 -top-12 h-16 w-16 select-none pointer-events-none"
+            aria-hidden="true"
+          />
+          <img
+            src="/doodle_loop.png"
+            alt=""
+            className="animate-float-slow absolute -bottom-12 -right-8 h-20 w-20 select-none pointer-events-none rotate-12"
+            aria-hidden="true"
+          />
 
           <motion.div
             whileHover={{ scale: 1.02, rotate: 1 }}
