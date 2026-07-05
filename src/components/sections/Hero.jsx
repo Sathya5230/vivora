@@ -1,137 +1,80 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkle, Swirl } from "../ui/Doodles";
+import Button from "../ui/Button";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80";
 
-const partners = [
-  // Logo 1
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p1">
-    <rect x="0" y="5" width="20" height="20" rx="4" />
-    <circle cx="10" cy="15" r="5" fill="white" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="13" letterSpacing="-0.5">logoipsum</text>
-  </svg>,
-  // Logo 2
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p2">
-    <rect x="0" y="5" width="4" height="20" rx="1" />
-    <rect x="6" y="9" width="4" height="16" rx="1" />
-    <rect x="12" y="13" width="4" height="12" rx="1" />
-    <rect x="18" y="17" width="4" height="8" rx="1" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="12" letterSpacing="0.5">LOGOIPSUM</text>
-  </svg>,
-  // Logo 3
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p3">
-    <path d="M10 5l4 4-4 4-4-4 4-4zM10 13l4 4-4 4-4-4 4-4z" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="12" letterSpacing="0.5">LOGOIPSUM</text>
-  </svg>,
-  // Logo 4
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p4">
-    <circle cx="10" cy="15" r="10" />
-    <circle cx="10" cy="15" r="6" fill="white" />
-    <rect x="10" y="5" width="10" height="10" fill="white" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="13" letterSpacing="-0.5">logoipsum</text>
-  </svg>,
-  // Logo 5
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p5">
-    <path d="M5 15a5 5 0 0110 0v5H5v-5zM10 5a5 5 0 015 5v5h-5V5z" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="12" letterSpacing="0.5">LOGOIPSUM</text>
-  </svg>,
-  // Logo 6
-  <svg className="h-5 w-auto text-slate-700" viewBox="0 0 120 30" fill="currentColor" key="p6">
-    <rect x="0" y="5" width="20" height="20" rx="10" fill="none" stroke="currentColor" strokeWidth="4" />
-    <path d="M10 5v20" stroke="currentColor" strokeWidth="3" />
-    <text x="28" y="20" fontFamily="sans-serif" fontWeight="bold" fontSize="12" letterSpacing="0.5">LOGOIPSUM</text>
-  </svg>
-];
-
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-purple-50/70 via-white to-white py-16 md:py-24">
-      {/* Background radial soft ambient glow */}
-      <div className="absolute top-0 left-1/4 -z-10 h-96 w-96 rounded-full bg-purple-200/30 blur-3xl" />
-      <div className="absolute bottom-12 right-1/4 -z-10 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
+    <section className="relative overflow-hidden bg-cream py-16 md:py-24">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(30,11,28,0.12) 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+        aria-hidden="true"
+      />
 
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 md:grid-cols-12 md:items-center">
-          {/* Hero Left: Image with custom doodles */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative md:col-span-5"
-          >
-            {/* Doodles positioning matching reference image */}
-            <Sparkle className="absolute -left-6 -top-6 h-10 w-10 text-purple-400 animate-pulse" />
-            <Sparkle className="absolute -bottom-6 -right-6 h-10 w-10 text-purple-400 animate-pulse" />
-            <Swirl className="absolute -bottom-8 -left-6 h-12 w-20 text-indigo-400 rotate-90" />
-            <Swirl className="absolute -top-8 -right-6 h-12 w-20 text-indigo-400 -rotate-90" />
-            
-            <img
-              src={HERO_IMAGE}
-              alt="Guests celebrating at a Vivora-planned event"
-              className="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-2xl ring-4 ring-purple-100/50"
-            />
-          </motion.div>
-
-          {/* Hero Right: Content & Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-            className="md:col-span-7 flex flex-col justify-center"
-          >
-            <span className="text-sm font-bold uppercase tracking-widest text-gold-500">
-              Vivora Events
-            </span>
-            <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.1] text-slate-900 sm:text-5xl lg:text-[3.5rem] tracking-tight">
-              Every Occasion, <span className="text-purple-600">Perfectly</span> Orchestrated
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-slate-600/90 leading-relaxed">
-              From intimate ceremonies to citywide celebrations, Vivora plans, designs,
-              and delivers every detail of your event — so you can just show up and
-              celebrate.
-            </p>
-
-            {/* Ticket Banner Box */}
-            <div className="mt-10 flex flex-col gap-6 rounded-[2rem] bg-gradient-to-r from-purple-100/80 to-purple-50/40 p-6 shadow-sm border border-purple-100/30 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="font-display text-lg font-bold text-slate-900 sm:text-xl">
-                  15+ Event Categories, One Team
-                </p>
-                <p className="mt-2.5 text-xs font-semibold text-slate-600 sm:text-sm">
-                  Weddings · Corporate · Celebrations · Culture · and more
-                </p>
-              </div>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-slate-800 hover:shadow-lg whitespace-nowrap"
-              >
-                Book a Consultation
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Partners Section: Trusted by 15.000+ Organizations */}
+      <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:items-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-24 border-t border-slate-100 pt-16 text-center"
+          transition={{ duration: 0.6 }}
+          className="relative md:col-span-5"
         >
-          <h2 className="text-sm font-bold tracking-wider text-purple-600 uppercase">
-            Trusted by <span className="text-slate-900 font-extrabold">15.000+</span> Organizations
-          </h2>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center rounded-2xl bg-white p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-50 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-              >
-                {partner}
-              </div>
-            ))}
+          <Sparkle className="absolute -left-5 -top-5 h-9 w-9 text-gold-400" />
+          <Swirl className="absolute -bottom-7 -right-4 h-11 w-20 rotate-12 text-plum-400" />
+
+          <img
+            src={HERO_IMAGE}
+            alt="Guests celebrating at a Vivora-planned event"
+            className="aspect-[4/3] w-full border-2 border-plum-900 object-cover"
+          />
+
+          <div className="absolute -bottom-6 left-6 flex -rotate-3 items-center gap-2 border-2 border-dashed border-plum-900 bg-cream px-4 py-2 shadow-[4px_4px_0_0_rgba(30,11,28,1)]">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-plum-900">
+              No. 001 · Est. Vivora
+            </span>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="md:col-span-7"
+        >
+          <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-600">
+            <span className="h-px w-6 bg-gold-500" aria-hidden="true" />
+            Vivora Events
+          </span>
+          <h1 className="mt-5 font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl">
+            Every occasion,
+            <br />
+            <span className="text-plum-500">perfectly</span> orchestrated
+          </h1>
+          <p className="mt-6 max-w-lg text-lg text-plum-700/80">
+            From intimate ceremonies to citywide celebrations, Vivora plans, designs,
+            and delivers every detail of your event — so you can just show up and
+            celebrate.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-6 border-t-2 border-plum-900 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-display text-xl font-bold text-plum-900">
+                15+ Event Categories, One Team
+              </p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-plum-700/60">
+                Weddings · Corporate · Celebrations · Culture · and more
+              </p>
+            </div>
+            <Button as={Link} to="/contact" variant="primary">
+              Book a Consultation
+            </Button>
           </div>
         </motion.div>
       </div>

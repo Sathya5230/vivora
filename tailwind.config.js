@@ -32,8 +32,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        sans: ["Manrope", "sans-serif"],
+        display: ["Bricolage Grotesque", "sans-serif"],
+        sans: ["Instrument Sans", "sans-serif"],
+        mono: ["Space Mono", "monospace"],
       },
       keyframes: {
         marquee: {

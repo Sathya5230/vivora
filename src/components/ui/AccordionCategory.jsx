@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-export default function AccordionCategory({ category, defaultOpen = false, searchTerm = "" }) {
+export default function AccordionCategory({
+  category,
+  index = 0,
+  defaultOpen = false,
+  searchTerm = "",
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const Icon = category.icon;
 
@@ -16,19 +21,18 @@ export default function AccordionCategory({ category, defaultOpen = false, searc
   const isOpen = open || (searchTerm.length > 0 && visibleEvents.length > 0);
 
   return (
-    <div className="rounded-2xl border border-plum-100 bg-white">
+    <div className="border-b border-plum-900/15">
       <button
         type="button"
         onClick={() => setOpen(!isOpen)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+        className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-plum-100 text-plum-700">
-            <Icon size={20} />
+        <span className="flex items-center gap-4">
+          <span className="font-mono text-xs text-plum-700/40">
+            {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="font-display text-lg font-semibold text-plum-900">
-            {category.emoji} {category.name}
-          </span>
+          <Icon size={18} className="text-plum-700" />
+          <span className="font-display text-lg font-bold text-plum-900">{category.name}</span>
         </span>
         <ChevronDown
           size={20}
@@ -37,9 +41,12 @@ export default function AccordionCategory({ category, defaultOpen = false, searc
       </button>
 
       {isOpen && (
-        <div className="flex flex-wrap gap-2 px-6 pb-6">
+        <div className="flex flex-wrap gap-2 pb-6 pl-11">
           {visibleEvents.map((eventName) => (
-            <span key={eventName} className="rounded-full bg-plum-50 px-4 py-2 text-sm text-plum-700">
+            <span
+              key={eventName}
+              className="border border-plum-900/15 px-3 py-1.5 text-xs font-medium text-plum-700"
+            >
               {eventName}
             </span>
           ))}

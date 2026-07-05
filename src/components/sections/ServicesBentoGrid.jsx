@@ -14,23 +14,28 @@ export default function ServicesBentoGrid() {
         eyebrow="What We Plan"
         title="Every Kind of Celebration"
         subtitle="From the most traditional rituals to the boldest brand activations — explore a few of the 15+ categories Vivora manages end to end."
+        align="left"
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {featured.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+      <div className="mt-12 grid gap-px overflow-hidden border border-plum-900/15 bg-plum-900/15 sm:grid-cols-2 lg:grid-cols-4">
+        {featured.map((category, index) => (
+          <CategoryCard
+            key={category.id}
+            category={category}
+            index={index}
+            wide={index === 0 || index === 3 || index === 6}
+          />
         ))}
 
         <Link
           to="/services"
-          className="flex flex-col items-center justify-center gap-3 rounded-2xl bg-plum-900 p-6 text-center text-cream transition hover:bg-plum-800"
+          className="flex flex-col items-center justify-center gap-1 bg-plum-900 p-6 text-center text-cream transition hover:bg-plum-800"
         >
-          <span className="font-display text-lg font-semibold">
-            +{remainingCount} More Categories
+          <span className="font-display text-2xl font-extrabold">+{remainingCount}</span>
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold-400">
+            More Categories
           </span>
-          <span className="inline-flex items-center gap-2 text-sm text-gold-400">
-            View All Services <ArrowRight size={16} />
-          </span>
+          <ArrowRight size={16} className="mt-2" />
         </Link>
       </div>
     </section>
