@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2, Instagram, Facebook, Twitter } from "lucide-react";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import { categories } from "../data/categories";
@@ -40,6 +40,7 @@ export default function Contact() {
       />
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">
+        {/* TODO: Email, phone, and office hours below are placeholders to replace before launch */}
         <div className="space-y-6 rounded-3xl bg-plum-900 p-8 text-cream">
           <p className="font-display text-xl font-semibold">Get in Touch</p>
           <ul className="space-y-4 text-sm text-cream/80">
@@ -56,6 +57,17 @@ export default function Contact() {
           <p className="text-sm text-cream/60">
             Office hours: Monday – Saturday, 9:00 AM – 7:00 PM
           </p>
+          <div className="flex gap-4 text-cream/70">
+            <a href="#" aria-label="Instagram" className="hover:text-gold-400">
+              <Instagram size={20} />
+            </a>
+            <a href="#" aria-label="Facebook" className="hover:text-gold-400">
+              <Facebook size={20} />
+            </a>
+            <a href="#" aria-label="Twitter" className="hover:text-gold-400">
+              <Twitter size={20} />
+            </a>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-plum-100 p-8">
