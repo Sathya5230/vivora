@@ -32,7 +32,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
+        display: ["Syne", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
       },
       keyframes: {
