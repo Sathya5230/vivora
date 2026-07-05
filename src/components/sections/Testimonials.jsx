@@ -1,7 +1,7 @@
 import TestimonialCard from "../ui/TestimonialCard";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
-
+import { DoodleStar } from "../ui/GeneratedDoodles";
 // Placeholder testimonials — replace with real client quotes before launch.
 const testimonials = [
   {
@@ -26,12 +26,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <img
-        src="/doodle_star.png"
-        alt=""
-        className="animate-float absolute left-8 top-4 h-12 w-12 select-none pointer-events-none opacity-60"
-        aria-hidden="true"
-      />
+      <DoodleStar className="animate-float absolute left-8 top-4 h-10 w-10 text-gold-500/70 select-none pointer-events-none" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Client Love" title="What Our Clients Say" />
         <div className="mt-12 grid gap-6 md:grid-cols-3">

@@ -35,12 +35,7 @@ export default function Contact() {
 
   return (
     <section className="relative mx-auto max-w-6xl overflow-hidden px-6 py-16">
-        <img
-          src="/doodle_star.png"
-          alt=""
-          className="animate-float absolute right-6 top-2 h-12 w-12 select-none pointer-events-none opacity-60"
-          aria-hidden="true"
-        />
+        <DoodleStar className="animate-float absolute right-6 top-2 h-10 w-10 text-gold-500/70 select-none pointer-events-none" />
       <SectionHeading
         eyebrow="Let's Talk"
         title="Start Planning Your Event"

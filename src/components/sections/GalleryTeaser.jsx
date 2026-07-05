@@ -1,7 +1,7 @@
 import SectionHeading from "../ui/SectionHeading";
 import TiltImage from "../ui/TiltImage";
 import Reveal from "../ui/Reveal";
-
+import { DoodleLoop } from "../ui/GeneratedDoodles";
 const photos = [
   {
     src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80",
@@ -28,12 +28,7 @@ const photos = [
 export default function GalleryTeaser() {
   return (
     <section className="relative overflow-hidden bg-plum-50 px-6 py-24">
-      <img
-        src="/doodle_loop.png"
-        alt=""
-        className="animate-float-slower absolute bottom-8 right-8 hidden h-16 w-16 select-none pointer-events-none rotate-90 opacity-45 sm:block"
-        aria-hidden="true"
-      />
+      <DoodleLoop className="animate-float-slower absolute bottom-8 right-8 hidden h-16 w-16 text-plum-400/50 rotate-90 select-none pointer-events-none sm:block" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Moments We've Made" title="A Glimpse Into Our Work" />
         <div className="mt-14 columns-2 gap-4 lg:columns-4">

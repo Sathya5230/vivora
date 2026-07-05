@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Users, Palette, Compass, ArrowRight, ArrowLeft, RefreshCw, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DoodleStar, DoodleSwirl, DoodleLoop } from "../ui/GeneratedDoodles";
 
 const vibes = [
   { id: "elegant", name: "Elegant & Classic", icon: Palette, emoji: "💍", desc: "A timeless, refined aesthetic with soft lighting, florals, and sophisticated styling." },
@@ -130,24 +131,9 @@ export default function VibeConfigurator() {
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         
         {/* Floating Custom Hand-Drawn Doodle Assets */}
-        <img
-          src="/doodle_star.png"
-          alt=""
-          className="animate-float absolute -left-10 -top-12 h-16 w-16 select-none pointer-events-none opacity-40"
-          aria-hidden="true"
-        />
-        <img
-          src="/doodle_loop.png"
-          alt=""
-          className="animate-float-slow absolute -right-10 -bottom-10 h-20 w-20 select-none pointer-events-none rotate-45 opacity-40"
-          aria-hidden="true"
-        />
-        <img
-          src="/doodle_swirl.png"
-          alt=""
-          className="animate-float absolute right-10 -top-8 h-16 w-16 select-none pointer-events-none opacity-30"
-          aria-hidden="true"
-        />
+        <DoodleStar className="animate-float absolute -left-10 -top-12 h-16 w-16 text-gold-500/40 select-none pointer-events-none" />
+        <DoodleLoop className="animate-float-slow absolute -right-10 -bottom-10 h-20 w-20 text-purple-500/40 select-none pointer-events-none rotate-45" />
+        <DoodleSwirl className="animate-float absolute right-10 -top-8 h-16 w-16 text-purple-400/30 select-none pointer-events-none" />
 
         {/* Header content */}
         <div className="text-center mb-16">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
-
+import { DoodleStar, DoodleLoop } from "./GeneratedDoodles";
 export default function CtaBanner({
   title = "Ready to Plan Your Event?",
   subtitle = "Tell us your vision — we'll handle everything from concept to celebration.",
@@ -9,18 +9,8 @@ export default function CtaBanner({
 }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-plum-700 to-plum-900 px-6 py-20 text-center text-cream">
-      <img
-        src="/doodle_star.png"
-        alt=""
-        className="animate-float absolute left-10 top-10 h-14 w-14 select-none pointer-events-none opacity-50"
-        aria-hidden="true"
-      />
-      <img
-        src="/doodle_loop.png"
-        alt=""
-        className="animate-float-slow absolute bottom-10 right-10 h-16 w-16 select-none pointer-events-none rotate-45 opacity-50"
-        aria-hidden="true"
-      />
+      <DoodleStar className="animate-float absolute left-10 top-10 h-12 w-12 text-gold-400/50 select-none pointer-events-none" />
+      <DoodleLoop className="animate-float-slow absolute bottom-10 right-10 h-16 w-16 text-gold-400/40 rotate-45 select-none pointer-events-none" />
       <span className="flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
         <span className="h-px w-6 bg-gold-400/70" aria-hidden="true" />
         Get in Touch
