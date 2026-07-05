@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
+import { DoodleStar, DoodleLoop } from "../ui/GeneratedDoodles";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80";
@@ -26,18 +27,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="relative md:col-span-5"
         >
-          <img
-            src="/doodle_star.png"
-            alt=""
-            className="animate-float absolute -left-12 -top-12 h-16 w-16 select-none pointer-events-none"
-            aria-hidden="true"
-          />
-          <img
-            src="/doodle_loop.png"
-            alt=""
-            className="animate-float-slow absolute -bottom-12 -right-8 h-20 w-20 select-none pointer-events-none rotate-12"
-            aria-hidden="true"
-          />
+          <DoodleStar className="animate-float absolute -left-10 -top-10 h-14 w-14 text-gold-500/80 select-none pointer-events-none" />
+          <DoodleLoop className="animate-float-slow absolute -bottom-10 -right-8 h-20 w-20 text-plum-400/80 rotate-12 select-none pointer-events-none" />
 
           <motion.div
             whileHover={{ scale: 1.02, rotate: 1 }}

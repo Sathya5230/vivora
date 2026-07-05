@@ -4,6 +4,7 @@ import SectionHeading from "../components/ui/SectionHeading";
 import ProcessSection from "../components/sections/ProcessSection";
 import CtaBanner from "../components/ui/CtaBanner";
 import Reveal from "../components/ui/Reveal";
+import { DoodleStar, DoodleLoop } from "../components/ui/GeneratedDoodles";
 
 const values = [
   {
@@ -55,18 +56,8 @@ export default function About() {
   return (
     <>
       <section className="relative overflow-hidden px-6 pb-24 pt-16">
-        <img
-          src="/doodle_star.png"
-          alt=""
-          className="animate-float absolute left-10 top-6 h-12 w-12 select-none pointer-events-none opacity-60"
-          aria-hidden="true"
-        />
-        <img
-          src="/doodle_loop.png"
-          alt=""
-          className="animate-float-slow absolute right-12 top-16 h-16 w-16 select-none pointer-events-none rotate-12 opacity-60"
-          aria-hidden="true"
-        />
+        <DoodleStar className="animate-float absolute left-10 top-6 h-10 w-10 text-gold-500/70 select-none pointer-events-none" />
+        <DoodleLoop className="animate-float-slow absolute right-12 top-16 h-16 w-16 text-plum-400/60 rotate-12 select-none pointer-events-none" />
         <div className="mx-auto max-w-5xl text-center">
           <SectionHeading
             eyebrow="About Vivora"

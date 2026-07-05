@@ -5,6 +5,7 @@ import CtaBanner from "../components/ui/CtaBanner";
 import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import { categories } from "../data/categories";
+import { DoodleStar } from "../components/ui/GeneratedDoodles";
 
 export default function Services() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,12 +17,7 @@ export default function Services() {
   return (
     <>
       <section className="relative overflow-hidden px-6 pb-12 pt-16 text-center">
-        <img
-          src="/doodle_star.png"
-          alt=""
-          className="animate-float absolute right-10 top-8 h-12 w-12 select-none pointer-events-none opacity-60"
-          aria-hidden="true"
-        />
+        <DoodleStar className="animate-float absolute right-10 top-8 h-10 w-10 text-gold-500/70 select-none pointer-events-none" />
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             eyebrow="Our Services"
