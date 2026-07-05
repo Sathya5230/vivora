@@ -4,7 +4,7 @@ import AccordionCategory from "../components/ui/AccordionCategory";
 import CtaBanner from "../components/ui/CtaBanner";
 import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
-import { Sparkle } from "../components/ui/Doodles";
+import { Sparkle, Swirl } from "../components/ui/Doodles";
 import { categories } from "../data/categories";
 
 export default function Services() {
@@ -18,6 +18,7 @@ export default function Services() {
     <>
       <section className="relative overflow-hidden px-6 pb-12 pt-16 text-center">
         <Sparkle className="animate-float absolute right-10 top-8 h-8 w-8 text-gold-400/70" />
+        <Swirl className="animate-float-slow absolute left-10 top-16 h-10 w-16 -rotate-12 text-plum-300/60" />
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             eyebrow="Our Services"
