@@ -42,7 +42,7 @@ export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-cream via-plum-50/50 to-cream px-6 py-24 md:py-32">
+    <section className="relative overflow-hidden bg-transparent px-6 py-24 md:py-32">
       {/* Background dot pattern */}
       <div className="absolute inset-0 dot-pattern opacity-40 pointer-events-none" />
 

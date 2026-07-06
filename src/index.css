@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-cream text-plum-900 font-sans antialiased;
+  @apply bg-lavender-canvas text-plum-900 font-sans antialiased;
 }
 
 .noise-overlay {

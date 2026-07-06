@@ -8,17 +8,17 @@ const HERO_IMAGE =
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-plum-100/60 via-cream to-cream py-16 md:py-24">
+    <section className="relative overflow-hidden bg-transparent py-16 md:py-24">
       {/* Dynamic background shapes */}
       <motion.div
         animate={{ x: [0, 40, -25, 0], y: [0, -30, 30, 0], scale: [1, 1.1, 0.9, 1] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-10 left-1/4 -z-10 h-96 w-96 rounded-full bg-plum-200/40 blur-3xl"
+        className="absolute -top-10 left-1/4 -z-10 h-96 w-96 rounded-full bg-plum-200/15 blur-3xl"
       />
       <motion.div
         animate={{ x: [0, -30, 40, 0], y: [0, 40, -20, 0], scale: [1, 0.9, 1.08, 1] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold-200/30 blur-3xl"
+        className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold-200/10 blur-3xl"
       />
 
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:items-center">

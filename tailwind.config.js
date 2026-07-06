@@ -30,6 +30,10 @@ export default {
           100: "#fbf6f1",
           200: "#f5ebe0",
         },
+        lavender: {
+          canvas: "#ebd3eb",
+          blob: "#f7eff8",
+        },
       },
       fontFamily: {
         display: ["Bricolage Grotesque", "sans-serif"],

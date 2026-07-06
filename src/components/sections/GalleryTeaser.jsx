@@ -27,7 +27,7 @@ const photos = [
 
 export default function GalleryTeaser() {
   return (
-    <section className="relative overflow-hidden bg-plum-50 px-6 py-24">
+    <section className="relative overflow-hidden bg-transparent px-6 py-24">
       <DoodleLoop className="animate-float-slower absolute bottom-8 right-8 hidden h-16 w-16 text-plum-400/50 rotate-90 select-none pointer-events-none sm:block" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Moments We've Made" title="A Glimpse Into Our Work" />
